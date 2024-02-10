@@ -2,7 +2,6 @@ import React, { useState} from "react";
 import {
   useWriteContract,
   useWaitForTransactionReceipt,
-  type BaseError,
 } from 'wagmi';
 import { abi } from "@/lib/Abi/Asset";
 import Traow from "./TransferOwner.module.css";
