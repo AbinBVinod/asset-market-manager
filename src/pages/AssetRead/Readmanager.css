@@ -1,0 +1,14 @@
+.read-assets-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  .read-assets-container h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+  }
+  

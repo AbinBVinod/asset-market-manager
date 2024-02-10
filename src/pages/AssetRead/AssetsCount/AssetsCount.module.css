@@ -1,0 +1,7 @@
+.acc {
+    @apply flex justify-start w-[100%] ml-8 ;
+}
+
+.asc {
+    @apply flex gap-3
+}
