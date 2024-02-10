@@ -65,8 +65,9 @@ export default function AddCrypto() {
         functionName: "addCryptoAsset",
         args: [cryptoProps],
       });
-      console.log("Transaction sent, hash:", tx.hash);
-    } catch (error) {
+       
+      // console.log("Transaction sent, hash:", tx.hash);
+    } catch (error : any) {
       console.error("Error adding crypto asset:", error);
       setIsError(true);
       setErrorMessage("Failed to add crypto asset. Error: " + error.message);
