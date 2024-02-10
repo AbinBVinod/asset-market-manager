@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, {useState} from "react";
 import {
   useWriteContract,
   useWaitForTransactionReceipt,
@@ -6,7 +6,7 @@ import {
 import { abi } from "@/lib/Abi/Asset";
 import Traow from "./TransferOwner.module.css";
 
-export function TransferOwner() {
+export default function TransferOwner() {
   const [ownerAddress, setOwnerAddress] = useState("");
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
