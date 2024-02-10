@@ -11,7 +11,7 @@ export function TransferOwner() {
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const { data: hash, error: writeError, isPending, writeContract } = useWriteContract();
+  const { data: hash, isPending, writeContract } = useWriteContract();
 
   async function transferOwner(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,7 +28,7 @@ export function TransferOwner() {
     }
   }
 
-  const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({
+  const { isLoading: isConfirming, } = useWaitForTransactionReceipt({
     hash,
   });
 
