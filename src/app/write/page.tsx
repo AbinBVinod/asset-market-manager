@@ -1,5 +1,6 @@
 "use client"
 import { useAccount } from 'wagmi';
+// import { WriteContract } from '';
 import { Account } from '@/components/Wallet/Account';
 import { Connect } from '@/components/Wallet/Connect';
 import WriteAssetsManager from "@/pages/AssetWrite/WriteManager"

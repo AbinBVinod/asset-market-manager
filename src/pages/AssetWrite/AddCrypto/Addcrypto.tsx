@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { useState } from "react";
 import { useWriteContract, useWaitForTransactionReceipt } from "wagmi";

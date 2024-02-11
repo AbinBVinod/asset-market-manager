@@ -1,8 +1,9 @@
 import "./WriteManager.css";
-import TransferOwner from "./TranferOwner/TransferOwner";
-import AddCrypto from "./AddCrypto/Addcrypto";
+import TransferOwner  from "./TranferOwner/TransferOwner";
+import   AddCrypto  from "./AddCrypto/Addcrypto"
 
-const WriteAssetsManager = () => {
+
+export default function WriteAssetsManager() {
   return (
     <>
       <>
@@ -17,6 +18,6 @@ const WriteAssetsManager = () => {
       </>
     </>
   );
-};
+}
 
-export default WriteAssetsManager;
+

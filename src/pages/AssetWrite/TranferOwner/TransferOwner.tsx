@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
 import {
   useWriteContract,
   useWaitForTransactionReceipt,
@@ -6,12 +6,12 @@ import {
 import { abi } from "@/lib/Abi/Asset";
 import Traow from "./TransferOwner.module.css";
 
-export default function TransferOwner() {
+const  TransferOwner = () => {
   const [ownerAddress, setOwnerAddress] = useState("");
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const { data: hash, isPending, writeContract } = useWriteContract();
+  const { data: hash, error: writeError, isPending, writeContract } = useWriteContract();
 
   async function transferOwner(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,7 +28,7 @@ export default function TransferOwner() {
     }
   }
 
-  const { isLoading: isConfirming, } = useWaitForTransactionReceipt({
+  const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({
     hash,
   });
 
@@ -52,3 +52,4 @@ export default function TransferOwner() {
     </>
   );
 }
+export default TransferOwner;
