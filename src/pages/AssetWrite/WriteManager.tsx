@@ -1,6 +1,7 @@
 import "./WriteManager.css";
 import TransferOwner  from "./TranferOwner/TransferOwner";
 import   AddCrypto  from "./AddCrypto/Addcrypto"
+import RenounceOwnership from "./RenounceOwnership/AddRenounceOwnership";
 
 
 export default function WriteAssetsManager() {
@@ -14,6 +15,7 @@ export default function WriteAssetsManager() {
 
           <TransferOwner />
           <AddCrypto />
+          <RenounceOwnership/>
         </div>
       </>
     </>

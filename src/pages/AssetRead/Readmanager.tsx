@@ -3,6 +3,8 @@
 import "./Readmanager.css";
 import AssetsCount from "./AssetsCount/AssetsCount";
 import ReadCryptoAssets from "./AssetsCrypto/AssetsCryptoRead";
+import Allowedchain from "@/pages/AssetRead/AssetsallowedChainIds /AssetsAllowedchain"
+import IsWhiteListed from "./AssetsWhiteListed/Whitelisted"
 
 const ReadAssetsManager = () => {
   
@@ -12,6 +14,8 @@ const ReadAssetsManager = () => {
       <h1>Read Assets Manager</h1>
       <AssetsCount/>
       <ReadCryptoAssets/>
+       <Allowedchain/>
+       <IsWhiteListed/>
     </div>
   );
 };

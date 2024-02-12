@@ -1,0 +1,8 @@
+.main {
+    @apply ml-[-790px] ;
+}
+
+
+.main h1 {
+    @apply text-xs mt-2  ;
+}

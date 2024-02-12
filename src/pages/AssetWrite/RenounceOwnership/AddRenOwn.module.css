@@ -1,0 +1,11 @@
+.main {
+    @apply flex gap-3 mt-[-1620px] ml-[-560px] items-center ;
+}
+
+.main h1 {
+ @apply text-red-400;
+}
+
+.main button {
+ @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500 ;
+}

@@ -1,3 +1,4 @@
+"use client"
 import s from "./AssetsCount.module.css";
 
 import { useEffect, useState } from "react";

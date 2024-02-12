@@ -9,7 +9,7 @@ const Write = () => {
     const { isConnected } = useAccount();
   return (
     <>
-    {isConnected ? <Account /> : <Connect />}
+    {isConnected ? <Account />  : <Connect />}
       {isConnected && <WriteAssetsManager/>}
        {/* </> */}
     
