@@ -1,6 +1,20 @@
 .cont {
-   @apply flex  flex-col gap-2 justify-start w-full ml-10 mt-[-10px];
+   @apply flex  flex-col gap-2 justify-start w-full ml-[4.5rem] mt-[-10px];
   
   }
 
+  .tform {
+   @apply flex w-[24%] gap-3;
+  }
   
+.tform label {
+   @apply text-sm font-semibold;
+}
+
+.tform input {
+   @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500;
+}
+
+.tform button{
+    @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500 ;
+}

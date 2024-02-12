@@ -37,14 +37,15 @@ const  TransferOwner = () => {
       <div className={Traow.cont}>
         <h3>Transfer Owner</h3>
         {isError && <p className="error">{errorMessage}</p>}
-        <form className="" onSubmit={transferOwner}>
+        <form className={Traow.tform} onSubmit={transferOwner}>
           <input
             type="text"
             placeholder="New Owner Address"
             value={ownerAddress}
             onChange={(e) => setOwnerAddress(e.target.value)}
           />
-          <button type="submit" disabled={isPending || isConfirming}>
+          <button 
+           type="submit" disabled={isPending || isConfirming}>
             {isPending || isConfirming ? 'Confirming...' : 'Submit'}
           </button>
         </form>

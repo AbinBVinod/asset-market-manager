@@ -1,17 +1,26 @@
 .cont {
 
-  @apply flex flex-col gap-2;
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: start;
-  margin-left: 50px; */
+  @apply flex gap-2 w-full mt-9 ;
+
 }
 
 .heading {
-  @apply text-xl ;
+  @apply  ml-7 text-green-500 ;
 }
 
 .button {
-  @apply text-clip ;
+  @apply w-full px-6 py-3 text-lg font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-md hover:from-blue-600 focus:outline-none focus:ring focus:ring-blue-400 disabled:opacity-50 ;
+}
+
+.csts {
+ @apply flex flex-col text-xs mt-[37px] ml-[-79px] gap-2  w-[395px]  ;
+}
+
+
+.csts label {
+  @apply text-sm font-semibold ;
+}
+
+.csts input {
+  @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500;
 }

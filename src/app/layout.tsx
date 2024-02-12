@@ -4,6 +4,7 @@ import { type ReactNode } from 'react'
 import "./globals.css";
 
 import { Providers } from "./providers";
+import { Toaster } from "@/components/ui/sonner";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,6 +19,7 @@ export default function RootLayout(props: { children: ReactNode }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers>{props.children}</Providers>
+        <Toaster />
       </body>
     </html>
   );

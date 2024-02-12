@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/AssetRead/AssetsCrypto/AssetsCryptoRead.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/AssetRead/AssetsCrypto/AssetsCryptoRead.js", "src/pages/AssetWrite/AddCrypto/Addcrypto.tsx"],
   "exclude": ["node_modules"]
 }
