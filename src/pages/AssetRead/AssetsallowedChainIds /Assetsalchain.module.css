@@ -3,5 +3,5 @@
 }
 
 .main {
-    @apply mt-[-980px] ml-[-790px] ;
+    @apply mt-[-980px] ml-[-490px] flex flex-col justify-center  ;
 }
