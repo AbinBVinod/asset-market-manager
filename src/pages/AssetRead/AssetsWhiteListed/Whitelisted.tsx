@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import isWl from "./Whitelisted.module.css"; 
 import { getisWhiteListedasset } from "@/components/ReadAssets/whitelisted/WhitelistedId";
+import { Input } from "@/components/ui/input"
 
 const IsWhiteListed = () => {
     const [isWhitelisted, setIsWhitelisted] = useState<boolean | undefined>();
@@ -29,7 +30,7 @@ const IsWhiteListed = () => {
     return (
         <>
             <div className={isWl.main}>
-                <input
+                <Input
                     type="number"
                     placeholder="enter id"
                     value={argsValue || ""}

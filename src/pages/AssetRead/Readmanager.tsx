@@ -7,6 +7,10 @@ import Allowedchain from "@/pages/AssetRead/AssetsallowedChainIds /AssetsAllowed
 import IsWhiteListed from "./AssetsWhiteListed/Whitelisted"
 import MarketOpen from "./MarketOpen/MarketOpen"
 import Owner from "./Owner/Owner"
+import GetMinLiquidityRequiredForExecution from "./MinliquidityReqExe/MinLiqExe"
+import Deviaton from "./Deviation/Deviation";
+import AssetPricefromMarket from "./AssetPriceFromMarket/PriceFromMarket";
+
 
 const ReadAssetsManager = () => {
   
@@ -20,6 +24,9 @@ const ReadAssetsManager = () => {
        <Allowedchain/>
        <IsWhiteListed/>
        <MarketOpen/>
+       <GetMinLiquidityRequiredForExecution/>
+       <Deviaton/>
+       <AssetPricefromMarket/>
       
     </div>
   );

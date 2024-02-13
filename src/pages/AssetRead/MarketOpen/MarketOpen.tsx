@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Mkp from "./Market.module.css";
 import { getMarketopen } from "@/components/ReadAssets/marketOpen/MarketOpen";
+import { Input } from "@/components/ui/input"
 
 const MarketOpen = () => {
   const [isMarketopen, setIsmarketopen] = useState<boolean | undefined>();
@@ -31,7 +32,7 @@ const MarketOpen = () => {
   return (
     <>
       <div className={Mkp.main}>
-        <input
+        <Input
           type="number"
           placeholder="enter id"
           value={argsValue}

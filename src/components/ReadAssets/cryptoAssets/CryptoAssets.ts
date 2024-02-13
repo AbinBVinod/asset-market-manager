@@ -58,7 +58,7 @@ export const getCryptoAssets = async (arg: any) => {
         },
       };
 
-      console.log(structuredResult);
+      // console.log(structuredResult);
       return structuredResult;
     }
     return null;

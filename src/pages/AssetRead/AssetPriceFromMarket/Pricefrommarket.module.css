@@ -1,0 +1,7 @@
+.main {
+    @apply flex justify-center flex-col  ml-[-500px] mt-6
+}
+
+.main h1 {
+    @apply ml-0 text-xs mt-2
+}

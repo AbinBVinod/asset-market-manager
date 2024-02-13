@@ -3,6 +3,7 @@ import asid from "./Assetsalchain.module.css";
 
 import { useEffect, useState } from "react";
 import { getAllowedChainid } from "@/components/ReadAssets/allowedChainid/Allowedchainid";
+import { Input } from "@/components/ui/input"
 
 const Allowedchain = () => {
   const [allowedchainId, setallowedchainId] = useState();
@@ -25,7 +26,7 @@ const Allowedchain = () => {
   return (
     <>
       <div className={asid.main}>
-        <input type="number" value={argsValue} 
+        <Input type="number" value={argsValue} 
          onChange={handleInputChange}
          placeholder="Enter Chainid number"
         />
