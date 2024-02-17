@@ -74,7 +74,7 @@
 
 
 .new {
-    @apply flex flex-col gap-24 mt-[127px]
+    @apply flex flex-col gap-7 mt-[127px]
 }
 
 .upwhsta {
@@ -107,7 +107,7 @@
 }
 
 .newtwo {
-  @apply flex flex-col items-center justify-center
+  @apply flex flex-col items-center gap-7 mt-28
 }
 
 .twonewinputaligh {
@@ -116,5 +116,21 @@
 
 
 .utara h3 {
+  @apply mb-3
+}
+
+.utamt h3 {
+  @apply mb-3
+}
+
+.osstat h3 {
+  @apply mb-3
+}
+
+.uMlq h3 {
+  @apply mb-3
+}
+
+.uAriFa h3 {
   @apply mb-3
 }

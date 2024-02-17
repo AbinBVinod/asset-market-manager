@@ -2,7 +2,7 @@ import alw from "./Allwrite.module.css";
 
 import * as React from "react";
 import { useState } from "react";
-import { useWriteContract } from "wagmi";
+import { useSwitchAccount, useWriteContract } from "wagmi";
 import { abi } from "@/lib/Abi/Asset";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
@@ -81,7 +81,33 @@ const Allwrite = () => {
     useState("");
   const [updateCollateraltp, setCollateraltp] = useState("");
 
+  //for update timed market assets reference asset
+   const [assetidTmaRa , setassetidTmaRa ] = useState("");
+   const [referenceAsset , setreferenceAsset ] = useState("");
+  
+   //for update timed market asset market timing
+   const [assetIDtmamt , setassetIDtmamt] = useState("");
+   const [ marketOtime , setmarketOtime] = useState("");
+   const [marketOdur , setmarketOdur] = useState("");
 
+   //for update orcale source status
+   const [ assetIdOrSosa , setassetIdOrSosa ] =  useState ("");
+   const [ deceNebaleOSS , setdeceNebaleOSS  ] = useState ("");
+   const [ centerliOSS , setcenterliOSS ] = useState ("");
+
+   //for update min liqudity
+   const [ assetIdMinLiq , setassetIdMinLiq] = useState("");
+   const [ minliqreqExc , setminliqreqExc] = useState("");
+
+   // for update assets risk facors
+   const [ assetsIdUpAsRiFa , setassetsIdUpAsRiFa  ] = useState("");
+   const [ maxLevlFac , setmaxLevlFac  ] = useState("");
+   const [ postSizResFat , setpostSizResFat ] = useState("");
+   const [ maxPossizePma , setmaxPossizePma ] = useState("");
+   const [ maxpospnlf , setmaxpospnlf ] = useState("");
+   const [ maxglobapnlFa , setmaxglobapnlFa  ] = useState("");
+
+ 
 
   //for wagmi write contact
   const { data: hash, error: writeError, writeContract } = useWriteContract();
@@ -210,10 +236,7 @@ const Allwrite = () => {
         address: "0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE",
         abi: abi,
         functionName: "updateTradePropsShortable",
-        args: [
-          parseInt(assetIDtradepropsSortable),
-          updateShortable.toLowerCase() == "true",
-        ],
+        args: [parseInt(assetIDtradepropsSortable),updateShortable.toLowerCase() == "true",],
       });
     } catch (error: any) {
       setIsError(true);
@@ -279,6 +302,88 @@ const Allwrite = () => {
       setErrorMessage(error.message);
     }
   }
+
+  // for update Timed Market Asset Reference Asset
+   async function udpateTimedmarketassetReferenceAsset(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); 
+    try {
+      await writeContract({
+        address : '0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE',
+        abi : abi,
+        functionName : "updateTimedMarketAssetReferenceAsset",
+        args : [parseInt(assetidTmaRa) , referenceAsset ]
+      })
+    }
+    catch (error:any) {
+      setIsError(true);
+      setErrorMessage(error.message);
+    }
+  }
+
+  // for update Timed Market Asset Market timing
+   async function updateTimedMarketAssetMarketTiming(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); 
+    try {
+      await writeContract ({
+        address : '0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE',
+        abi : abi,
+        functionName : 'updateTimedMarketAssetMarketTimings',
+        args: [parseInt(assetIDtmamt), parseInt(marketOtime), parseInt(marketOdur) ]
+      })
+
+    }
+    catch(error) {
+    }
+   }
+
+   //for update orace source status
+   async function updateOracleSourceStatus(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); 
+    try {
+      await writeContract ({
+        address : '0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE',
+        abi : abi,
+        functionName : 'updateOracleSourceStatus',
+        args: [assetIDtmamt, marketOtime, marketOdur, ]
+      })
+  } catch (error: any) {
+    setIsError(true);
+    setErrorMessage(error.message);
+  }
+  }
+  
+  // for update min liq
+  async function updateMinLiquidExc (e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); 
+    try {
+      await writeContract ({
+        address : '0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE',
+        abi : abi,
+        functionName : 'updateMinLiquidity',
+        args: [assetIdMinLiq, [minliqreqExc],]
+      })
+  } catch (error: any) {
+    setIsError(true);
+    setErrorMessage(error.message);
+  }
+  }
+
+  //for update asset rish factor
+  async function updateassetsRiskFactor(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); 
+    try {
+      await writeContract ({
+        address : '0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE',
+        abi : abi,
+        functionName : 'updateAssetRiskFactors',
+        args: [parseInt(assetsIdUpAsRiFa), parseInt(maxLevlFac), parseInt(postSizResFat), maxPossizePma.toLowerCase() === "true", parseInt(maxpospnlf), parseInt(maxglobapnlFa)]
+      })
+  } catch (error: any) {
+    setIsError(true);
+    setErrorMessage(error.message);
+  }
+  }
+ 
 
   //toast messages
   const ToastShacn = () => {
@@ -735,27 +840,152 @@ const Allwrite = () => {
         </div>
 
         <div className={alw.newtwo}>
+
           {/* for update timed asset refernce assets */}
           <div className={alw.utara}>
-            <h3> Update Trade Props Collateral</h3>
-            <form className={alw.upws} onSubmit={updatetradepropscollateral}>
+            <h3> Update Timed Market Asset Reference Asset</h3>
+            <form className={alw.upws} onSubmit={udpateTimedmarketassetReferenceAsset}>
               <Input
                 type="number"
                 placeholder="Enter asset id"
-                value={assetIdtradepropsCollateral}
-                onChange={(e) => setAssetIdtradepropsCollateral(e.target.value)}
+                value={assetidTmaRa}
+                onChange={(e) => setassetidTmaRa(e.target.value)}
               />
               <Input
-                type="boolean"
-                placeholder="Enter True or Flase"
-                value={updateCollateraltp}
-                onChange={(e) => setCollateraltp(e.target.value)}
+                type="text"
+                placeholder="string"
+                value={referenceAsset}
+                onChange={(e) => setreferenceAsset(e.target.value)}
               />
               <Button onClick={ToastShacn} type="submit" disabled={isPending}>
                 {isPending ? "Confirming..." : "Submit"}
               </Button>
             </form>
           </div>
+
+          {/* for update timed asset market timeings */}
+           <div className={alw.utamt}>
+           <h3> Update Timed Market Asset Market Timing</h3>
+            <form className={alw.upws} onSubmit={updateTimedMarketAssetMarketTiming}>
+              <Input
+                type="number"
+                placeholder="Enter asset id"
+                value={assetIDtmamt}
+                onChange={(e) => setassetIDtmamt(e.target.value)}
+              />
+              <Input
+                type="number"
+                placeholder="Enter TImestamp"
+                value={marketOtime}
+                onChange={(e) => setmarketOtime(e.target.value)}
+              />
+              <Input
+                type="number"
+                placeholder="Enter Open Duration"
+                value={marketOdur}
+                onChange={(e) => setmarketOdur(e.target.value)}
+              />
+              <Button onClick={ToastShacn} type="submit" disabled={isPending}>
+                {isPending ? "Confirming..." : "Submit"}
+              </Button>
+            </form>
+           </div>
+
+            {/* for update orcale source staus */}
+           <div className={alw.osstat}>
+           <h3> Update Orcale Source Status</h3>
+            <form className={alw.upws} onSubmit={updateOracleSourceStatus}>
+              <Input
+                type="number"
+                placeholder="_assetId"
+                value={assetIdOrSosa}
+                onChange={(e) => setassetIdOrSosa(e.target.value)}
+              />
+              <Input
+                type="bool"
+                placeholder="_isDecentralisedEnabled bool"
+                value={deceNebaleOSS}
+                onChange={(e) => setdeceNebaleOSS(e.target.value)}
+              />
+              <Input
+                type="bool"
+                placeholder="_isCentralisedEnabled bool"
+                value={centerliOSS}
+                onChange={(e) => setcenterliOSS(e.target.value)}
+              />
+              <Button onClick={ToastShacn} type="submit" disabled={isPending}>
+                {isPending ? "Confirming..." : "Submit"}
+              </Button>
+            </form>
+           </div>
+
+           {/* for update min liquidity */}
+           <div className={alw.uMlq}>
+           <h3> Update Min liquidity </h3>
+            <form className={alw.upws} onSubmit={updateMinLiquidExc}>
+              <Input
+                type="number"
+                placeholder="Enter asset id"
+                value={assetIdMinLiq}
+                onChange={(e) => setassetIdMinLiq(e.target.value)}
+              />
+              <Input
+                type="number"
+                placeholder="_minLiquidityRequiredForExecution"
+                value={minliqreqExc}
+                onChange={(e) => setminliqreqExc(e.target.value)}
+              />
+              <Button onClick={ToastShacn} type="submit" disabled={isPending}>
+                {isPending ? "Confirming..." : "Submit"}
+              </Button>
+            </form>
+           </div>
+
+            {/* for update asset risk factors */}
+            <div className={alw.uAriFa}>
+            <h3> Update Assets Risk Factors </h3>
+            <form className={alw.upws} onSubmit={updateassetsRiskFactor}>
+              <Input
+                type="number"
+                placeholder="_assetId"
+                value={assetsIdUpAsRiFa}
+                onChange={(e) => setassetsIdUpAsRiFa(e.target.value)}
+              />
+              <Input
+                type="number"
+                placeholder="_maxLeverageFactor"
+                value={maxLevlFac}
+                onChange={(e) => setmaxLevlFac(e.target.value)}
+              />
+               <Input
+                type="number"
+                placeholder="_positionSizeReserveFactor"
+                value={postSizResFat}
+                onChange={(e) => setpostSizResFat(e.target.value)}
+              />
+               <Input
+                type="bool"
+                placeholder="_maxPosSizePerMarket bool"
+                value={maxPossizePma}
+                onChange={(e) => setmaxPossizePma(e.target.value)}
+              />
+               <Input
+                type="number"
+                placeholder="_maxPosPnlFactor"
+                value={maxpospnlf}
+                onChange={(e) => setmaxpospnlf(e.target.value)}
+              />
+               <Input
+                type="number"
+                placeholder="_maxGlobalPnlFactor"
+                value={maxglobapnlFa}
+                onChange={(e) => setmaxglobapnlFa(e.target.value)}
+              />
+              <Button onClick={ToastShacn} type="submit" disabled={isPending}>
+                {isPending ? "Confirming..." : "Submit"}
+              </Button>
+            </form>
+            </div>
 
         </div>
       </div>
