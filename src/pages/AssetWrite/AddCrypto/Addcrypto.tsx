@@ -15,6 +15,7 @@ export default function AddCrypto() {
     setMinLiquidityRequiredForExecution,
   ] = useState(100);
   const [isWhitelisted, setIsWhitelisted] = useState(true);
+  const [assetTickName, setassetTickName] = useState('')
   const [chainIdAllowed, setChainIdAllowed] = useState("1");
   const [assetAddressByChainId, setAssetAddressByChainId] = useState(
     "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43"
@@ -60,6 +61,7 @@ export default function AddCrypto() {
       id,
       [minLiquidityRequiredForExecution],
       isWhitelisted,
+      assetTickName,
       [chainIdAllowed],
       [assetAddressByChainId],
       TOKEN_DECIMALS_PRECISION,
@@ -88,7 +90,7 @@ export default function AddCrypto() {
 
     try {
       const tx = await writeContract({
-        address: "0xc10a62a740A50BC9bd7c444bb98d3bA1FF888da0",
+        address: "0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE",
         abi: abi,
         functionName: "addCryptoAsset",
         args: [cryptoProps],
@@ -135,6 +137,16 @@ export default function AddCrypto() {
             checked={isWhitelisted}
             onChange={(e) => setIsWhitelisted(e.target.checked)}
           />
+
+          {/* assetTickName */}
+          <label htmlFor="assetTickName">assetTickName</label>
+          <Input
+            type="text"
+            id="assetTickName"
+            value={assetTickName}
+            onChange={(e) => setassetTickName(e.target.value)}
+          />
+
 
           {/* Min Liquidity Required For Execution */}
           <label htmlFor="minLiquidityRequiredForExecution">

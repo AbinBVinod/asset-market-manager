@@ -1,11 +1,11 @@
 .cont {
 
-  @apply flex gap-2 w-full mt-9 ;
+  @apply flex justify-start items-start  gap-2 w-full mt-9 ;
 
 }
 
 .heading {
-  @apply  ml-7 text-green-500 ;
+  @apply  flex justify-center  text-green-500 ;
 }
 
 .button {

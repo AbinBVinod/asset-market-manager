@@ -8,7 +8,7 @@ export const  getMarketopen = async (args:any) => {
      try {
       const result = await readContract(config , {
         abi ,
-          address : "0xc10a62a740A50BC9bd7c444bb98d3bA1FF888da0",
+          address : "0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE",
           functionName : "isMarketOpen",
           args: [args]
       })

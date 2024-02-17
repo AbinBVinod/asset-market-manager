@@ -1,5 +1,4 @@
 export const abi = [
-  
     {
       inputs: [
         {
@@ -140,6 +139,7 @@ export const abi = [
               type: "uint256[]",
             },
             { internalType: "bool", name: "isWhitelisted", type: "bool" },
+            { internalType: "bytes32", name: "assetTickName", type: "bytes32" },
             {
               internalType: "uint256[]",
               name: "chainIdAllowed",
@@ -267,6 +267,11 @@ export const abi = [
                   type: "uint256[]",
                 },
                 { internalType: "bool", name: "isWhitelisted", type: "bool" },
+                {
+                  internalType: "bytes32",
+                  name: "assetTickName",
+                  type: "bytes32",
+                },
                 {
                   internalType: "uint256[]",
                   name: "chainIdAllowed",
@@ -465,6 +470,11 @@ export const abi = [
                   type: "uint256[]",
                 },
                 { internalType: "bool", name: "isWhitelisted", type: "bool" },
+                {
+                  internalType: "bytes32",
+                  name: "assetTickName",
+                  type: "bytes32",
+                },
                 {
                   internalType: "uint256[]",
                   name: "chainIdAllowed",
@@ -701,6 +711,11 @@ export const abi = [
                       type: "bool",
                     },
                     {
+                      internalType: "bytes32",
+                      name: "assetTickName",
+                      type: "bytes32",
+                    },
+                    {
                       internalType: "uint256[]",
                       name: "chainIdAllowed",
                       type: "uint256[]",
@@ -889,6 +904,7 @@ export const abi = [
       outputs: [
         { internalType: "uint256", name: "id", type: "uint256" },
         { internalType: "bool", name: "isWhitelisted", type: "bool" },
+        { internalType: "bytes32", name: "assetTickName", type: "bytes32" },
         {
           internalType: "uint256",
           name: "TOKEN_DECIMALS_PRECISION",
@@ -1036,6 +1052,13 @@ export const abi = [
     },
     {
       inputs: [{ internalType: "uint256", name: "_assetId", type: "uint256" }],
+      name: "getAssetTickByAssetId",
+      outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "uint256", name: "_assetId", type: "uint256" }],
       name: "getAssetTradeProps",
       outputs: [
         { internalType: "bool", name: "", type: "bool" },
@@ -1177,6 +1200,7 @@ export const abi = [
               type: "uint256[]",
             },
             { internalType: "bool", name: "isWhitelisted", type: "bool" },
+            { internalType: "bytes32", name: "assetTickName", type: "bytes32" },
             {
               internalType: "uint256[]",
               name: "chainIdAllowed",
@@ -1479,5 +1503,4 @@ export const abi = [
       stateMutability: "nonpayable",
       type: "function",
     },
-  ,
-];
+]

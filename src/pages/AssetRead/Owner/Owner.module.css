@@ -1,4 +1,4 @@
 .main {
-    @apply flex justify-center bg-gradient-to-r from-indigo-500;
+    @apply flex justify-center;
 }
 

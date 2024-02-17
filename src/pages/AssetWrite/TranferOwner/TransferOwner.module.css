@@ -1,5 +1,5 @@
 .cont {
-   @apply flex  flex-col gap-2 justify-start w-full ml-[4.5rem] mt-[-10px];
+   @apply flex  flex-col gap-2  w-full items-start ;
   
   }
 

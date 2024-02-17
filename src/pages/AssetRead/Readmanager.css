@@ -12,3 +12,20 @@
     font-size: 40px;
   }
   
+.owner-cont {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+.assetcount-cont {
+  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.readcryptoassets-cont {
+  display: flex;
+  justify-content: start;
+  justify-items: start;
+}

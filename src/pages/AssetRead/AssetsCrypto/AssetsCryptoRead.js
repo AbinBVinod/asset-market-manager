@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./AssetsCryptoRead.css"; 
 import { getCryptoAssets } from "@/components/ReadAssets/cryptoAssets/CryptoAssets"; 
+import { convertBYTS } from "@/lib/web3/bytestostring"
 
 const ReadCryptoAssets = () => {
     const [cryptoAssets, setCryptoAssets] = useState([]);
@@ -36,12 +37,12 @@ const ReadCryptoAssets = () => {
   
       return (
         <div className="crypto-assets-container">
-          <h2>CryptoAssets</h2>
           {cryptoAssets.map((asset, index) => (
             <div key={index} className="crypto-asset-item">
               {/* all data */}
               <div><strong>ID: </strong> {asset.id}</div>
               <div><strong>Is Whitelisted: </strong> {asset.isWhitelisted ? 'Yes' : 'No'}</div>
+              <div><strong>assetTickName: </strong> {convertBYTS(asset.assetTickName)}</div>
                <div><strong>TOKEN_DECIMALS_PRECISION: </strong> {asset.TOKEN_DECIMALS_PRECISION}</div>
                <div><strong>TOKEN_PRICE_PRECISION: </strong> {asset.TOKEN_PRICE_PRECISION}</div>
                <div><strong>isIsolatedPoolAllowed: </strong> {asset.isIsolatedPoolAllowed}</div>
@@ -70,13 +71,14 @@ const ReadCryptoAssets = () => {
   
     return (
       <div className="read-crypto-assets-container">
-        {renderCryptoAssets()}
-        <input
+                <h2>CryptoAssets</h2>
+         <input
           type="number"
           value={argValue}
           onChange={handleInputChange}
           placeholder="Enter asset number"
         />
+        {renderCryptoAssets()}
       </div>
     );
   };

@@ -3,30 +3,32 @@ import { abi } from '@/lib/Abi/Asset';
 import { config } from '@/lib/config';
 
 
+
 export const getCryptoAssets = async (arg: any) => {
   try {
     const result = await readContract(config, {
       abi,
-      address: "0xc10a62a740A50BC9bd7c444bb98d3bA1FF888da0",
+      address: "0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE",
       args: [arg],
       functionName: "cryptoAssets",
     }) as any[];;
 
     // console.log(result);
     if (result) {
-      const tradeProps = result[8] || {};
-      const marketProps = result[9] || {};
-      const riskProps = result[10] || {};
+      const tradeProps = result[9] || {};
+      const marketProps = result[10] || {};
+      const riskProps = result[11] || {};
 
       const structuredResult = {
         id: result[0].toString(),
         isWhitelisted: result[1].toString(),
-        TOKEN_DECIMALS_PRECISION: result[2].toString(),
-        TOKEN_PRICE_PRECISION: result[3].toString(),
-        isIsolatedPoolAllowed: result[4].toString(),
-        isSharedPoolAllowed: result[5].toString(),
-        isDecentralisedSourceEnabled: result[6].toString(),
-        isCentralisedSourceEnabled: result[7].toString(),
+        assetTickName: result[2].toString(),
+        TOKEN_DECIMALS_PRECISION: result[3].toString(),
+        TOKEN_PRICE_PRECISION: result[4].toString(),
+        isIsolatedPoolAllowed: result[5].toString(),
+        isSharedPoolAllowed: result[6].toString(),
+        isDecentralisedSourceEnabled: result[7].toString(),
+        isCentralisedSourceEnabled: result[8].toString(),
         tradeProps: {
           ...tradeProps,
           isShortable: tradeProps.isShortable?.toString(),
@@ -58,7 +60,7 @@ export const getCryptoAssets = async (arg: any) => {
         },
       };
 
-      // console.log(structuredResult);
+      console.log(structuredResult);
       return structuredResult;
     }
     return null;

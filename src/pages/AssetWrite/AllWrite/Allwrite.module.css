@@ -1,0 +1,120 @@
+.main {
+  @apply flex ml-[83px];
+}
+
+.heading {
+  @apply flex  items-center text-xl  ml-8;
+}
+
+.button {
+  @apply w-full px-6 py-3 text-lg font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-md hover:from-blue-600 focus:outline-none focus:ring focus:ring-blue-400 disabled:opacity-50;
+}
+
+.csts {
+  @apply flex flex-col text-xs mt-[37px] ml-[-79px] gap-2  w-[395px];
+}
+
+.csts label {
+  @apply text-sm font-semibold;
+}
+
+.csts input {
+  @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500;
+}
+
+
+.trnoRef {
+  @apply gap-2 ml-16 mt-28 flex flex-col  items-center 
+}
+
+
+
+
+
+.addcrypto {
+  @apply flex justify-start items-start  gap-2 w-full mt-9;
+}
+
+/* for transfer owner  */
+
+.ronw {
+  @apply flex  gap-3  ;
+}
+
+.ronw h1 {
+  @apply text-red-600;
+}
+
+.ronw button {
+  @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500;
+}
+
+/* for tranfer owner  */
+
+.cont {
+  @apply flex  flex-col gap-2  w-full items-start;
+}
+
+.tform {
+  @apply flex w-[24%] gap-3;
+}
+
+.tform label {
+  @apply text-sm font-semibold;
+}
+
+.tform input {
+  @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500;
+}
+
+.tform button {
+  @apply px-1 py-1 mt-1 text-sm border rounded-md focus:outline-none focus:border-blue-500;
+}
+
+
+
+.new {
+    @apply flex flex-col gap-24 mt-[127px]
+}
+
+.upwhsta {
+    @apply flex flex-col gap-3
+}
+
+.upws Input {
+    @apply mb-3
+}
+
+
+.utps h3 {
+  @apply mb-3
+}
+
+.utpshort h3 {
+  @apply mb-3
+}
+
+.utpref h3 {
+  @apply mb-3
+}
+
+.utplon h3 {
+  @apply mb-3
+}
+
+.utpcolat h3 {
+  @apply mb-3
+}
+
+.newtwo {
+  @apply flex flex-col items-center justify-center
+}
+
+.twonewinputaligh {
+  @apply flex gap-20
+}
+
+
+.utara h3 {
+  @apply mb-3
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { type ReactNode } from 'react'
 import "./globals.css";
 
@@ -7,7 +7,7 @@ import { Providers } from "./providers";
 import { Toaster } from "@/components/ui/sonner";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const jetBrains_Mono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Assets",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={jetBrains_Mono.className}>
         <Providers>{props.children}</Providers>
         <Toaster />
       </body>

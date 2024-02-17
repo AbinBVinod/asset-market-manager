@@ -1,5 +1,5 @@
 .main {
-    @apply flex justify-center flex-col  ml-[-500px] mt-6
+    @apply flex justify-center flex-col mt-6
 }
 
 .main h1 {
