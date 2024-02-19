@@ -107,6 +107,13 @@ const Allwrite = () => {
    const [ maxpospnlf , setmaxpospnlf ] = useState("");
    const [ maxglobapnlFa , setmaxglobapnlFa  ] = useState("");
 
+
+   //for update asset listing stage
+
+   const [ assetIdLisSta , setassetIdLisSta ] = useState("");
+   const [ isIsolatedpoolSALS , setIsIsolatedpoolSALS ] = useState("");
+   const [ isSharedPoolSTALS , setIsSharedPoolSTALS ] = useState("");
+
  
 
   //for wagmi write contact
@@ -368,7 +375,7 @@ const Allwrite = () => {
   }
   }
 
-  //for update asset rish factor
+  //for update asset risk factor
   async function updateassetsRiskFactor(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault(); 
     try {
@@ -383,17 +390,37 @@ const Allwrite = () => {
     setErrorMessage(error.message);
   }
   }
- 
+   
+  // for Update Assets listing Stage
+  async function updateAssetsListingStage(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); 
+    try {
+      await writeContract({
+        address : '0xFcEF7A7180f34D1685449D9BC08ed6aC02e157FE',
+        abi : abi,
+        functionName : 'updateAssetListingStage',
+        args : [parseInt(assetIdLisSta) , isIsolatedpoolSALS.toLowerCase() === "true" , isSharedPoolSTALS.toLowerCase() === "true" ]
+      })
+    }
+    catch (error: any) {
+      setIsError(true);
+      setErrorMessage("Please Enter Valid Data");
+    }
+  }
 
   //toast messages
   const ToastShacn = () => {
     toast("Wait For MetaMask");
   };
 
+  //toast Renounce write
   const ToastAndContract = () => {
     WriteRenounceOwner();
     ToastShacn();
   };
+
+
+
 
   return (
     <>
@@ -987,6 +1014,34 @@ const Allwrite = () => {
             </form>
             </div>
 
+            {/* for update asset listing stage */}
+            <div className={alw.ualSta}>
+            <h3> Update Asset Listing Stage </h3>
+            <form className={alw.upws} onSubmit={updateAssetsListingStage}>
+              <Input
+                type="number"
+                placeholder="Enter asset id"
+                value={assetIdLisSta}
+                onChange={(e) => setassetIdLisSta(e.target.value)}
+              />
+              <Input
+                type="bool"
+                placeholder="_isIsolatedPoolStatus"
+                value={isIsolatedpoolSALS}
+                onChange={(e) => setIsIsolatedpoolSALS(e.target.value)}
+              />
+              <Input
+              type="bool"
+              placeholder="_isSharedPoolStatus"
+              value={isSharedPoolSTALS}
+              onChange={(e) => setIsSharedPoolSTALS(e.target.value)}
+               />
+              <Button onClick={ToastShacn} type="submit" disabled={isPending}>
+                {isPending ? "Confirming..." : "Submit"}
+              </Button>
+            </form>
+            </div>
+             
         </div>
       </div>
     </>
