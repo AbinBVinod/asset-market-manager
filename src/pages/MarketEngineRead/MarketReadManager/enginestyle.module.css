@@ -1,0 +1,11 @@
+.main {
+    @apply flex justify-center mt-28
+}
+
+.main h1 {
+    @apply text-4xl
+}
+
+.owner {
+    @apply flex
+}

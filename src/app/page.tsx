@@ -3,7 +3,7 @@ import Assets from "@/components/AssetManager/Assets";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
 import { config } from '@/lib/wagmi';
-// import ReactDOM from 'react-dom/client';
+import MarketEnginer from "@/components/Market-engine/marketEngine";
 
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
      <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
       <Assets/>
+      <MarketEnginer/>
       </QueryClientProvider>
       </WagmiProvider>
     </>

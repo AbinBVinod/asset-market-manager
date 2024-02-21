@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const Allwrite = () => {
+  
   const [id, setId] = useState("1");
   const [
     minLiquidityRequiredForExecution,
@@ -109,7 +110,6 @@ const Allwrite = () => {
 
 
    //for update asset listing stage
-
    const [ assetIdLisSta , setassetIdLisSta ] = useState("");
    const [ isIsolatedpoolSALS , setIsIsolatedpoolSALS ] = useState("");
    const [ isSharedPoolSTALS , setIsSharedPoolSTALS ] = useState("");
